@@ -1,0 +1,70 @@
+html, body, .row {
+    height: 100%;
+}
+.icons-menu {
+    font-size: 20px;
+    color: #999;
+    margin: 0 10px 0 0;
+}
+
+.link-menu {
+    color: #999;
+    font-size: 18px;
+}
+
+.link-menu:hover {
+    background-color: #eff7f7;
+    color: #999;
+}
+
+.wrapper {
+    background-color: #eff7f7;
+}
+
+.box-dashboard {
+    background-color: #F8FAFC;
+}
+
+.tbody {
+    background-color: #F8FAFC;
+}
+
+.thead {
+    background-color: #343A40;
+    color: #fff;
+}
+
+.box-btn {
+    background-color: #fff;
+    color: #999;
+}
+
+.box-btn:hover {
+    text-decoration: none;
+    background-color: #209335;
+    color: #fff;
+}
+
+.box-btn-tash, .box-btn-edit {
+    background-color: #fff;
+    color: #999;
+}
+
+.box-btn-tash:hover {
+    text-decoration: none;
+    background-color: #FF0000;
+    color: #fff;
+}
+
+.box-btn-edit:hover {
+    text-decoration: none;
+    background-color: #845ef7;
+    color: #fff;
+}
+
+.icon-create {
+    color: #999;
+}
+.box-btn:hover .icon-create {
+    color: #fff;
+}
