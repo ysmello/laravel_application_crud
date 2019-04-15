@@ -16,7 +16,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->singleton(\Fake\Generator::class, function() {
+            return \Fake\Generator::create('pt_BR');
+        });
     }
 
     /**
