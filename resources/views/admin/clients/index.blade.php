@@ -5,6 +5,14 @@
         <div class="row px-5 py-3 m-0 border-bottom title-dashboard align-items-center">
           <h3 class="m-0 font-weight-bold">Clientes</h3>
         </div>
+        @if (Session::has('message'))
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            {{ Session::get('message') }}
+          </div>
+        @endif
         <div class="row px-5 mt-5 mx-0">
           <a href="{{ route('clients.create') }}" class="box-btn mb-5 p-3 shadow-sm rounded">
             <div class="media align-items-center">

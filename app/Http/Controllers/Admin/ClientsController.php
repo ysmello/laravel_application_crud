@@ -27,10 +27,10 @@ class ClientsController extends Controller
      */
     public function create(Request $request)
     {
-        $clientType = \App\Client::getClientType($request->client_type); 
+        $clientType = \App\Client::getClientType($request->client_type);
         return view('admin.clients.create', ['client' => new Client(), 'clientType' => $clientType]);
     }
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -42,6 +42,7 @@ class ClientsController extends Controller
         $data = $request->only(array_keys($request->rules()));
         $data['defaulter'] = $request->has('defaulter');
         Client::create($data);
+        \Session::flash('message', 'Cliente criado com sucesso');
         return redirect()->route('clients.index');
     }
 
@@ -81,6 +82,7 @@ class ClientsController extends Controller
         $data['defaulter'] = $request->has('defaulter');
         $client->fill($data);
         $client->save();
+        \Session::flash('message', 'Cliente atualizado com sucesso !!');
         return redirect()->route('clients.index');
     }
 
@@ -93,6 +95,7 @@ class ClientsController extends Controller
     public function destroy(Client $client)
     {
         $client->delete();
+        \Session::flash('message', 'Cliente excluido com sucesso !!');
         return redirect()->route('clients.index');
     }
 }
