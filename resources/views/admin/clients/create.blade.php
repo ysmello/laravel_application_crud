@@ -10,11 +10,11 @@
             <a href="{{ route('clients.create', ['client_type' => \App\Client::TYPE_INDIVIDUAL]) }}" class="btn btn-secondary">Pessoa fisica</a>
             <a href="{{ route('clients.create', ['client_type' => \App\Client::TYPE_LEGAL]) }}" class="btn btn-secondary">Pessoa juridica</a>
         </div>
-        <form method="POST" action="{{ route('clients.store') }}">
+        {{ Form::open(['route' => 'clients.store']) }}
             <div class="column m-5 p-3 box-dashboard shadow-sm rounded">
                 @include('admin.templates.template-form')
                 <input type="submit" value="Cadastrar" class="btn btn-primary">
             </div>
-        </form>
+        {{ Form::close() }}
     </div>
 @endsection

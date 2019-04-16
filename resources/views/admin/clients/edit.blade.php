@@ -6,12 +6,11 @@
         <h3 class="m-0 font-weight-bold">Atualizar cliente</h3>
         </div>
         @include('admin.templates.template-error')
-        <form action="{{ route('clients.update', ['client' => $client->id]) }}" method="post">
+        {{ Form::model($client, ['route' => 'clients.update', $client->$id], 'method' => 'PUT') }}
             <div class="column m-5 p-3 box-dashboard shadow-sm rounded">
-                {{ method_field('PUT') }}
                 @include('admin.templates.template-form')
                 <input type="submit" value="Cadastrar" class="btn btn-primary">
             </div>
-        </form>
+        {{ Form::close() }}
     </div>
 @endsection

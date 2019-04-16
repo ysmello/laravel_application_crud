@@ -6,10 +6,8 @@
         <h3 class="m-0 font-weight-bold">Visualizar cliente</h3>
         </div>
         <div class="row px-5 mt-5 mx-0">
-            <form method="POST" id="form-delete" action="{{ route('clients.destroy', ['clients' => $client->id]) }}" style="display: none;">
-                {{ csrf_field() }}
-                {{ method_field('DELETE') }}
-            </form>
+            {{ Form::open(['route' => 'clients.destroy', $client->id], 'method' => 'DELETE', 'id' => 'form-delete') }}
+            {{ Form::close() }}
             <a href="{{ route('clients.destroy', ['client' => $client->id]) }}" class="box-btn-tash mb-5 p-3 shadow-sm rounded" onclick="event.preventDefault();if(confirm('Deseja mesmo deletar este cliente ?')){document.getElementById('form-delete').submit();};">
                 <div class="media align-items-center">
                     <i class="fas fa-trash-alt fa-2x"></i>
